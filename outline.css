@@ -1,0 +1,66 @@
+@charset "UTF-8";
+/* reset styles for HTML 5.1 W3C Working Draft 28 May 2013 */
+/* sections */
+body,article,section,nav,aside,h1,h2,h3,h4,h5,h6,header,footer,address,
+/* groups */
+p,hr,pre,blockquote,ol,ul,li,dl,dt,dd,figure,figcaption,div,main,
+/* text */
+a,em,strong,small,s,cite,q,dfn,abbr,data,time,code,var,samp,kbd,sub,i,b,u,mark,
+ruby,rt,rp,bdi,bdo,span,br,wbr,
+/* edit */
+del,ins,
+/* embedded */
+img,iframe,embed,object,param,video,audio,source,track,canvas,map,area,
+/* table */
+table,caption,colgroup,col,tbody,thead,tfoot,tr,td,th,
+/* form */
+form,fieldset,legend,label,input,button,select,datalist,optgroup,option,
+textarea,keygen,output,progress,meter,
+/* interaction */
+details,summary,menu,menuitem,dialog {
+    border: 0;
+    outline: 0;
+    font-size: 100%;
+    background: transparent;
+}
+/* block elements */
+body,article,section,nav,aside,h1,h2,h3,h4,h5,h6,header,footer,address,p,hr,pre,
+blockquote,ol,ul,li,dl,dt,dd,figure,figcaption,div,main,form,fieldset {
+    display: block;
+}
+
+/* reset margin and padding */
+html * {
+    margin: 0;
+    padding: 0;
+    border-collapse: collapse;
+    box-sizing: border-box;
+}
+
+table {
+    border-collapse: collapse;
+}
+
+img {
+    border: none;
+}
+
+small {
+    font-size: 90%;
+}
+
+label {
+    cursor: pointer;
+}
+
+/* class */
+.o-float-clear:after {
+    content: '.';
+    display: block;
+    clear: both;
+    margin: 0;
+    padding: 0;
+    height: 0 !important;
+    line-height: 0;
+    visibility: hidden;
+}
