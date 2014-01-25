@@ -1,0 +1,113 @@
+/*
+ * outline - https://github.com/mah0x211/outline
+ *
+ * Copyright (c) 2013, Masatoshi Teruya
+ * All rights reserved.
+ * 
+ * Redistribution and use in source and binary forms, with or without 
+ * modification, are permitted provided that the following conditions are met:
+ * 
+ *   Redistributions of source code must retain the above copyright notice, this
+ *   list of conditions and the following disclaimer.
+ * 
+ *   Redistributions in binary form must reproduce the above copyright notice, 
+ *   this list of conditions and the following disclaimer in the documentation 
+ *   and/or other materials provided with the distribution.
+ * 
+ *   Neither the name of the {organization} nor the names of its
+ *   contributors may be used to endorse or promote products derived from
+ *   this software without specific prior written permission.
+ * 
+ * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" 
+ * AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE 
+ * IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE 
+ * ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE 
+ * LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR 
+ * CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF 
+ * SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS 
+ * INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN 
+ * CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) 
+ * ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE 
+ * POSSIBILITY OF SUCH DAMAGE.
+ */
+
+@charset "UTF-8";
+
+/* 
+    o-columnar: columnar tree
+    
+    .o-columnar[block]:
+        .col[block]:
+            ul[block]:
+                li[block or inline-block]:
+                    input[radio or checkbox]
+                    label[for=input]
+                ...
+                li[block or inline-block]:
+                    input[radio or checkbox]
+                    label[for=input]
+                    .col[block]:
+                        ...
+    
+    e.g.
+        <div class="o-columnar">
+            <div class="col">
+                <ul>
+                    <li><input type="radio" name="lv1" />foo
+                        <ul class="col">
+                            <li><input type="radio" name="lv2" />foo-1</li>
+                            <li><input type="radio" name="lv2" />foo-2</li>
+                            <li><input type="radio" name="lv2" />qux
+                                <ul class="col">
+                                    <li><input type="radio" name="lv3" />qux-1</li>
+                                    <li><input type="radio" name="lv3" />qux-2</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li><input type="radio" name="lv1" />bar</li>
+                    <li><input type="radio" name="lv1" />baz
+                        <ul class="col">
+                            <li><input type="radio" name="lv2" />baz-1</li>
+                            <li><input type="radio" name="lv2" />baz-2</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+*/
+.o-columnar {
+    position: relative;
+    height: 130px; /* overwrite */
+    width: 100%;
+    overflow-y: hidden;
+    text-align: left;
+    border: 1px #d6d6d6 solid;
+}
+.o-columnar ul,
+.o-columnar li {
+    margin: 0;
+    padding: 0;
+}
+.o-columnar li {
+    display: block;
+}
+.o-columnar .col {
+    display: block;
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 160px; /* overwrite */
+    border-right: 1px #d6d6d6 solid;
+}
+.o-columnar .col .col {
+    display: none;
+    margin-left: 160px; /* overwrite */
+}
+.o-columnar .col > ul {
+    height: 100%;
+    overflow-y: auto;
+}
+.o-columnar input:checked ~ .col {
+    display: block;
+}
