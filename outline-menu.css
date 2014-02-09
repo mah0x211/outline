@@ -45,7 +45,7 @@
 .o-menu > input[type="checkbox"] {
     display: none;
 }
-.o-menu > input[type="checkbox"]:checked + ul {
+.o-menu > input[type="checkbox"]:checked ~ ul {
     display: block;
 }
 .o-menu > ul {
