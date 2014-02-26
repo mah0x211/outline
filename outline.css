@@ -33,14 +33,14 @@
 
 @charset "UTF-8";
 
-/* reset styles for HTML 5.1 W3C Working Draft 28 May 2013 */
+/* reset styles for HTML 5.1 W3C Working Draft 04 Feb 2014 */
 /* sections */
 body,article,section,nav,aside,h1,h2,h3,h4,h5,h6,header,footer,address,
 /* groups */
 p,hr,pre,blockquote,ol,ul,li,dl,dt,dd,figure,figcaption,div,main,
 /* text */
-a,em,strong,small,s,cite,q,dfn,abbr,data,time,code,var,samp,kbd,sub,i,b,u,mark,
-ruby,rt,rp,bdi,bdo,span,br,wbr,
+a,em,strong,small,s,cite,q,dfn,abbr,data,time,code,var,samp,kbd,sub,sup,i,b,u,
+mark,ruby,rb,rt,rtc,rp,bdi,bdo,span,br,wbr,
 /* edit */
 del,ins,
 /* embedded */
