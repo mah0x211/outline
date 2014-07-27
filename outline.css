@@ -71,6 +71,13 @@ html * {
     box-sizing: border-box;
     -moz-box-sizing: border-box;
 }
+html *:before,
+html *:after {
+    margin: 0;
+    padding: 0;
+    border-collapse: collapse;
+    box-sizing: border-box;
+}
 
 table {
     border-collapse: collapse;
