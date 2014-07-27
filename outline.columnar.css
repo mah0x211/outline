@@ -37,7 +37,7 @@
     o-columnar: columnar tree
     
     .o-columnar[block]:
-        .col[block]:
+        .o-rowset[block]:
             ul[block]:
                 li[block or inline-block]:
                     input[radio or checkbox]
@@ -46,19 +46,19 @@
                 li[block or inline-block]:
                     input[radio or checkbox]
                     label[for=input]
-                    .col[block]:
+                    .o-rowset[block]:
                         ...
     
     e.g.
         <div class="o-columnar">
-            <div class="col">
+            <div class="o-rowset">
                 <ul>
                     <li><input type="radio" name="lv1" />foo
-                        <ul class="col">
+                        <ul class="o-rowset">
                             <li><input type="radio" name="lv2" />foo-1</li>
                             <li><input type="radio" name="lv2" />foo-2</li>
                             <li><input type="radio" name="lv2" />qux
-                                <ul class="col">
+                                <ul class="o-rowset">
                                     <li><input type="radio" name="lv3" />qux-1</li>
                                     <li><input type="radio" name="lv3" />qux-2</li>
                                 </ul>
@@ -67,7 +67,7 @@
                     </li>
                     <li><input type="radio" name="lv1" />bar</li>
                     <li><input type="radio" name="lv1" />baz
-                        <ul class="col">
+                        <ul class="o-rowset">
                             <li><input type="radio" name="lv2" />baz-1</li>
                             <li><input type="radio" name="lv2" />baz-2</li>
                         </ul>
@@ -92,7 +92,7 @@
 .o-columnar li {
     display: block;
 }
-.o-columnar .col {
+.o-columnar .o-rowset {
     display: block;
     position: absolute;
     top: 0;
@@ -100,14 +100,14 @@
     width: 160px; /* overwrite */
     border-right: 1px #d6d6d6 solid;
 }
-.o-columnar .col .col {
+.o-columnar .o-rowset .o-rowset {
     display: none;
     margin-left: 160px; /* overwrite */
 }
-.o-columnar .col > ul {
+.o-columnar .o-rowset > ul {
     height: 100%;
     overflow-y: auto;
 }
-.o-columnar input:checked ~ .col {
+.o-columnar input:checked ~ .o-rowset {
     display: block;
 }

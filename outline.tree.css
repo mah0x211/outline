@@ -37,7 +37,7 @@
     o-tree: tree layout class
     
     .o-tree[block]:
-        .col[block]:
+        .o-rowset[block]:
             ul[block]:
                 li[block or inline-block]:
                     input[radio or checkbox]
@@ -46,19 +46,19 @@
                 li[block or inline-block]:
                     input[radio or checkbox]
                     label[for=input]
-                    .col[block]:
+                    .o-rowset[block]:
                         ...
     
     e.g.
         <div class="o-tree">
-            <div class="col">
+            <div class="o-rowset">
                 <ul>
                     <li><input type="checkbox" name="foo" />foo
-                        <ul class="col">
+                        <ul class="o-rowset">
                             <li>foo-1</li>
                             <li>foo-2</li>
                             <li><input type="checkbox" name="qux" />qux
-                                <ul class="col">
+                                <ul class="o-rowset">
                                     <li>qux-1</li>
                                     <li>qux-2</li>
                                 </ul>
@@ -67,7 +67,7 @@
                     </li>
                     <li>bar</li>
                     <li><input type="checkbox" name="baz" />baz
-                        <ul class="col">
+                        <ul class="o-rowset">
                             <li>baz-1</li>
                             <li>baz-2</li>
                         </ul>
@@ -88,13 +88,13 @@
     margin: 0;
     padding: 0;
 }
-.o-tree .col {
+.o-tree .o-rowset {
     display: block;
 }
-.o-tree .col .col {
+.o-tree .o-rowset .o-rowset {
     display: none;
     margin-left: 1.2em;
 }
-.o-tree li > input:checked ~ .col {
+.o-tree li > input:checked ~ .o-rowset {
     display: block;
 }
