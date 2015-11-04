@@ -54,23 +54,27 @@
             <div class="o-rowset">
                 <ul>
                     <li><input type="radio" name="lv1" />foo
-                        <ul class="o-rowset">
-                            <li><input type="radio" name="lv2" />foo-1</li>
-                            <li><input type="radio" name="lv2" />foo-2</li>
-                            <li><input type="radio" name="lv2" />qux
-                                <ul class="o-rowset">
-                                    <li><input type="radio" name="lv3" />qux-1</li>
-                                    <li><input type="radio" name="lv3" />qux-2</li>
-                                </ul>
-                            </li>
-                        </ul>
+                        <div class="o-rowset">
+                            <ul class="o-rowset">
+                                <li><input type="radio" name="lv2" />foo-1</li>
+                                <li><input type="radio" name="lv2" />foo-2</li>
+                                <li><input type="radio" name="lv2" />qux
+                                    <ul class="o-rowset">
+                                        <li><input type="radio" name="lv3" />qux-1</li>
+                                        <li><input type="radio" name="lv3" />qux-2</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
                     </li>
                     <li><input type="radio" name="lv1" />bar</li>
                     <li><input type="radio" name="lv1" />baz
-                        <ul class="o-rowset">
-                            <li><input type="radio" name="lv2" />baz-1</li>
-                            <li><input type="radio" name="lv2" />baz-2</li>
-                        </ul>
+                        <div class="o-rowset">
+                            <ul>
+                                <li><input type="radio" name="lv2" />baz-1</li>
+                                <li><input type="radio" name="lv2" />baz-2</li>
+                            </ul>
+                        </div>
                     </li>
                 </ul>
             </div>
